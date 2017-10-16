@@ -1,3 +1,3 @@
-* Transitions
-* Animations
+* Transitions + Animations
+* Logo resize
 * 
