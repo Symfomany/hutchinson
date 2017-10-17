@@ -2,7 +2,7 @@
     <v-layout row>
         <v-flex xs12>
         <v-card>
-            <v-toolbar color="cyan" dark>
+            <v-toolbar  color="cyan" dark>
             <v-toolbar-title>Liste des projets (9/{{ items.length }})</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon>

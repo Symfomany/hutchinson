@@ -1,6 +1,11 @@
 # Démo
 https://emails-f1fa2.firebaseapp.com
 
+
+# Cahier des charges
+https://docs.google.com/document/d/1OvrewrRdSq57ZF7_bRBzV-ZVZnliWtgTpHYmMHSEHUo/edit
+
+
 # CDC Chartre graphique
 
 https://company-36344.frontify.com/d/04bMscTulCNK/hutchinson-style-guide%20#/base-graphique/nuancier-de-couleurs

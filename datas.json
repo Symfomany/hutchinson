@@ -1,0 +1,112 @@
+{
+    "datas": [
+        {
+            "nom": "Nouveau essui-glace révolutionnaire",
+            "description": "Multijet et intelligent, ce balai fait office d'essuie et de lave-glace. Un tout-en-un capable d'améliorer la visibilité et la sécurité de façon spectaculaire.",
+            "niveau": 6,
+            "referents": [
+                {
+                    "id": 1,
+                    "email": "julien@gmail.com",
+                    "phone": "0345668761",
+                    "adresse": "26 rue Emile Decorps",
+                    "ville": "Villeurbanne",
+                    "cp": 69100
+                },
+                {
+                    "id": 2,
+                    "email": "antoine@gmail.com",
+                    "phone": "0245218766",
+                    "adresse": "34 rue Antoine Primat",
+                    "ville": "Villeurbanne",
+                    "cp": 69100
+                },
+                {
+                    "id": 3,
+                    "email": "florent@gmail.com",
+                    "phone": "0145624766",
+                    "adresse": "307 Rue Garibaldi",
+                    "ville": "Lyon",
+                    "cp": 69003
+                }
+            ],
+            "activités": [
+                "Automobile",
+                "Pare-Brise",
+                "Balai Intelligent"
+            ],
+            "technologies": [
+                "Caoutchouc",
+                "Liquide",
+                "Jets de lave-glace"
+            ],
+            "fournisseurs": [
+                {
+                    "name": "Total E&R",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum non risus ac molestie. Integer vel dolor eu libero laoreet commodo. ",
+                    "phone": "0674589901",
+                    "email": "dupont@gmail.com"
+                },
+                {
+                    "name": "Borflex",
+                    "description": "Suspendisse porttitor, elit ac dapibus vehicula, magna magna faucibus est, ut semper justo augue vel felis.",
+                    "phone": "0664519202",
+                    "email": "durant@gmail.com"
+                }
+            ],
+            "gps": {
+                "lng": 4.835659,
+                "lat": 45.764043
+            }
+        },
+        {
+            "nom": "Nouveau soufflet en caoutchouc automobile",
+            "description": "Conformes aux normes françaises et étrangères encadrant la production du caoutchouc, nos pièces élastomères destinées au secteur automobile sont extrêmement résistantes. ",
+            "niveau": 4,
+            "referents": [
+                {
+                    "id": 1,
+                    "email": "florent@gmail.com",
+                    "phone": "0145668729",
+                    "adresse": "16 rue de la liberté",
+                    "ville": "Lyon",
+                    "cp": 69001
+                },
+                {
+                    "id": 2,
+                    "email": "thibaud@gmail.com",
+                    "phone": "0745218762",
+                    "adresse": "14 rue des Terreaux",
+                    "ville": "Lyon",
+                    "cp": 69004
+                }
+            ],
+            "activités": [
+                "Automobile",
+                "Isolant"
+            ],
+            "technologies": [
+                "Caoutchouc",
+                "Elastomères"
+            ],
+            "fournisseurs": [
+                {
+                    "name": "Sacreb",
+                    "description": "Proin tempor quam fringilla, vulputate urna sed, blandit mauris. Praesent in sollicitudin elit. Sed urna felis, finibus vel lorem a, eleifend faucibus dui.",
+                    "phone": "0174529971",
+                    "email": "laurent@gmail.com"
+                },
+                {
+                    "name": "Jeantet",
+                    "description": "Morbi pellentesque efficitur rutrum. Duis ullamcorper lacus eu diam mattis consequat. Phasellus porta eros ac odio consectetur, eu maximus nisi facilisis. Sed ac posuere ex",
+                    "phone": "0214519288",
+                    "email": "damien@gmail.com"
+                }
+            ],
+            "gps": {
+                "lng": 5.724524,
+                "lat": 45.188529
+            }
+        }
+    ]
+}
