@@ -1,12 +1,15 @@
 {
     "datas": [
         {
+            "id": 1,
+            "photo": "essui-glace.png",
             "nom": "Nouveau essui-glace révolutionnaire",
             "description": "Multijet et intelligent, ce balai fait office d'essuie et de lave-glace. Un tout-en-un capable d'améliorer la visibilité et la sécurité de façon spectaculaire.",
             "niveau": 6,
             "referents": [
                 {
                     "id": 1,
+                    "name": "Boyer Julien",
                     "email": "julien@gmail.com",
                     "phone": "0345668761",
                     "adresse": "26 rue Emile Decorps",
@@ -15,6 +18,7 @@
                 },
                 {
                     "id": 2,
+                    "name": "Boyer Antoine",
                     "email": "antoine@gmail.com",
                     "phone": "0245218766",
                     "adresse": "34 rue Antoine Primat",
@@ -23,6 +27,7 @@
                 },
                 {
                     "id": 3,
+                    "name": "Boyer Florent",
                     "email": "florent@gmail.com",
                     "phone": "0145624766",
                     "adresse": "307 Rue Garibaldi",
@@ -30,7 +35,7 @@
                     "cp": 69003
                 }
             ],
-            "activités": [
+            "activites": [
                 "Automobile",
                 "Pare-Brise",
                 "Balai Intelligent"
@@ -43,13 +48,13 @@
             "fournisseurs": [
                 {
                     "name": "Total E&R",
-                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum non risus ac molestie. Integer vel dolor eu libero laoreet commodo. ",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                     "phone": "0674589901",
                     "email": "dupont@gmail.com"
                 },
                 {
                     "name": "Borflex",
-                    "description": "Suspendisse porttitor, elit ac dapibus vehicula, magna magna faucibus est, ut semper justo augue vel felis.",
+                    "description": "Suspendisse porttitor, elit ac dapibus vehicula.",
                     "phone": "0664519202",
                     "email": "durant@gmail.com"
                 }
@@ -60,13 +65,16 @@
             }
         },
         {
-            "nom": "Nouveau soufflet en caoutchouc automobile",
+            "id": 2,
+            "photo": "soufflet.jpg",
+            "nom": "Soufflet en caoutchouc automobile",
             "description": "Conformes aux normes françaises et étrangères encadrant la production du caoutchouc, nos pièces élastomères destinées au secteur automobile sont extrêmement résistantes. ",
             "niveau": 4,
             "referents": [
                 {
                     "id": 1,
-                    "email": "florent@gmail.com",
+                    "name": "Boyer Aurelien",
+                    "email": "aurelien@gmail.com",
                     "phone": "0145668729",
                     "adresse": "16 rue de la liberté",
                     "ville": "Lyon",
@@ -74,6 +82,7 @@
                 },
                 {
                     "id": 2,
+                    "name": "Boyer Thibaud",
                     "email": "thibaud@gmail.com",
                     "phone": "0745218762",
                     "adresse": "14 rue des Terreaux",
@@ -81,7 +90,7 @@
                     "cp": 69004
                 }
             ],
-            "activités": [
+            "activites": [
                 "Automobile",
                 "Isolant"
             ],
@@ -106,6 +115,46 @@
             "gps": {
                 "lng": 5.724524,
                 "lat": 45.188529
+            }
+        },
+        {
+            "id": 3,
+            "photo": "join.jpg",
+            "nom": "Join gonflable de porte TGV",
+            "description": "Les joints gonflables servent à assurer l’étanchéité entre des éléments séparés par un espace important. Le déroulement du joint sous l’effet d’une pression interne permet la séparation de deux milieux. Après dégonflage, le joint reprend sa forme initiale.",
+            "niveau": 8,
+            "referents": [
+                {
+                    "id": 1,
+                    "name": "B",
+                    "email": "isabelle@yahoo.fr",
+                    "phone": "0245668811",
+                    "adresse": "12 rue Paul Bert",
+                    "ville": "Lyon",
+                    "cp": 69003
+                }
+            ],
+            "activites": [
+                "Train",
+                "Isaolant",
+                "TGV"
+            ],
+            "technologies": [
+                "Caoutchouc",
+                "Metal",
+                "Liquide"
+            ],
+            "fournisseurs": [
+                {
+                    "name": "Midi Caoutchouc",
+                    "description": "Lorem ipsum dolor sit amet.",
+                    "phone": "0284519929",
+                    "email": "durand@free.fr"
+                }
+            ],
+            "gps": {
+                "lng": 4.387178,
+                "lat": 45.439695
             }
         }
     ]

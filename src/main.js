@@ -13,10 +13,6 @@ Vue.use(Vuetify)
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyCRgtgFHekaN6I5u6jx5EufK9ivgE4Ibq8',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
   }
 })
 Vue.config.productionTip = false

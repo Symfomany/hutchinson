@@ -3,20 +3,22 @@
     <v-flex xs12>
       <v-card>
         <v-toolbar color="indigo" dark>
-
-            <v-breadcrumbs divider="/">
+            <v-breadcrumbs class="hidden-xs-only" divider="/">
                 <v-breadcrumbs-item 
-                    v-for="item in items" :key="item.text"
+                    v-for="(item,index) in items" :key="index"
                     :disabled="item.disabled"
                 >{{ item.text }}
                 </v-breadcrumbs-item>
             </v-breadcrumbs>
+            <v-toolbar-title class="white--text">{{ item.nom }}</v-toolbar-title>
+        
         </v-toolbar>
-        </v-card-media>
+        <v-card-media :src="'../static/img/' + item.photo" height="200px">
+         </v-card-media>
         <v-card-title>
           <div>
             <span class="grey--text">Nom du projet</span><br>
-            <span>Nouveau essui-glace révolutionnaire  {{  $route.params.id }}</span><br>
+            <span>{{ item.nom }}</span><br>
           </div>
         </v-card-title>
 
@@ -25,7 +27,7 @@
             <span class="grey--text">Description</span><br>
             <span>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a laoreet magna. Curabitur sodales ligula vitae ipsum imperdiet egestas. Nunc eget fermentum dui. Suspendisse vel risus at arcu condimentum fringilla. Sed dui lectus, condimentum eu ligula et, pharetra molestie tellus. Quisque vulputate tellus non turpis egestas blandit. Nunc ac metus nec lacus accumsan lobortis. Pellentesque tempor justo in velit dignissim, sit amet iaculis tellus egestas. Vestibulum eget urna ac nisi molestie efficitur. Maecenas interdum vulputate lorem, at mattis sapien finibus quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mollis mattis odio vel varius.
+                    {{ item.description }}
                 </p>
             </span><br>
           </div>
@@ -35,13 +37,8 @@
           <div>
             <span class="grey--text">Niveau de maturité</span><br>
             <span>
-                65/100 <br />
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star_half</i>
+                <i  v-for="(index,item) in item.niveau" :key="index" class="material-icons">star</i>
+                {{ item.niveau }}/10 
             </span>
             <br>
           </div>
@@ -52,8 +49,7 @@
           <div>
             <span class="grey--text">Référents</span><br>
             <ul>
-                <li>Nicolas Dupont <span class="grey--text">nicolas@dupont.fr</span></li>
-                <li>Nicolas Durand <span class="grey--text">julien.durand@hutchinson.fr</span></li>
+                <li :key="index" v-for="(it,index) in item.referents">{{ it.name }} <span ><a class="pink--text" :href="'mailto:'+it.email">{{ it.email }}</a></span></li>
             </ul>
           </div>
         </v-card-title>
@@ -62,55 +58,33 @@
         <v-card-title>
           <div>
             <span class="grey--text">Activités rattachées</span><br>
-            <v-chip color="primary" text-color="white">Activité 1</v-chip>
-            <v-chip color="primary" text-color="white">Activité 2</v-chip>
-            <v-chip color="primary" text-color="white">Activité 3</v-chip>
+            <v-chip :key="index" v-for="(activite,index) in item.activites" color="primary" text-color="white">{{ activite }}</v-chip>
           </div>
         </v-card-title>
         
         <v-card-title>
           <div>
             <span class="grey--text">Technologies</span><br>
-            <v-chip color="secondary" text-color="white">Technologies 1</v-chip>
-            <v-chip color="secondary" text-color="white">Technologies 2</v-chip>
-            <v-chip color="secondary" text-color="white">Technologies 3</v-chip>
+            <v-chip :key="index" v-for="(tech,index) in item.technologies" color="secondary" text-color="white">{{ tech }}</v-chip>
           </div>
         </v-card-title>
 
 
         <v-card-title>
            <p class="grey--text">Fournisseurs utilisées</p><br />
-           <v-layout style="width: 100%">
-            <v-flex lg6 xs12 @click="go(1)">
+           <v-layout :key="index" @click="go(index)" v-for="(fournisseur,index) in item.fournisseurs" style="width: 100%">
                 <v-card color="darken-2" >
-                <v-container fluid grid-list-lg>
+                    <v-container fluid grid-list-lg>
                         <div>
-                        <div class="headline"><span class="primary--text">Fournisseur 1</span></div>
-                        <div>Foster the People</div>
-                        <ul>
-                            <li><span class="grey--text">Dupont@free.fr</span></li>
-                            <li><span class="grey--text">Durand@gmail.com</span></li>
-                            <li><span class="grey--text">julien.boyer@yahoo.fr</span></li>
-                        </ul>
+                            <div class="headline"><span class="primary--text">{{ fournisseur.name }}</span></div>
+                            <div>{{ fournisseur.description }}</div>
+                            <ul>
+                                <li><span class="grey--text">{{ fournisseur.email }}</span></li>
+                                <li><span class="grey--text">{{ fournisseur.phone }}</span></li>
+                            </ul>
                         </div>
                     </v-container>
                 </v-card>
-            </v-flex>
-            <v-flex lg6 xs12 @click="go(2)">
-                <v-card color="darken-2" >
-                <v-container fluid grid-list-lg>
-                        <div>
-                        <div class="headline"><span class="primary--text">Fournisseur 2</span></div>
-                        <div>Foster the People</div>
-                        <ul>
-                            <li><span class="grey--text">Dupont@free.fr</span></li>
-                            <li><span class="grey--text">Durand@gmail.com</span></li>
-                            <li><span class="grey--text">julien.boyer@yahoo.fr</span></li>
-                        </ul>
-                        </div>
-                    </v-container>
-                </v-card>
-            </v-flex>
         </v-layout>
 
         </v-card-title>
@@ -120,23 +94,18 @@
             <span class="grey--text">Localisation</span><br>
             <gmap-map
                 :options="options"
-                :center="{lat:45.764043, lng:4.835659}"
+                :center="center"
                 :zoom="15"
                 map-type-id="terrain"
                 id="map"
                 >
                 <gmap-marker
-                :options="infoOptions"
-                class="infoBulle"
-                :opened="infoWinOpen"
-                :content="infoContent"
                 :icon="icon"
                 v-for="(m, index) in markers"
                 :key="index"
-                :position="m.position"
+                :position="m.gps"
                 :clickable="true"
                 :draggable="false"
-                @closeclick="infoWinOpen=false"
                 >
                 <gmap-info-window :options="infoOptions" class="infoBulle" :position="infoWindowPos" :opened="infoWinOpen" :content="infoContent"
                     @closeclick="infoWinOpen=false"></gmap-info-window>
@@ -150,11 +119,20 @@
 </template>
 
 <script>
+import { Store } from '@/Store';
 
 export default {
-  name: 'list',
+  name: 'detail',
+  created(){
+    Store.find(this.$route.params.id).then((res) => {
+        this.item = res;
+        this.markers = [res];
+        this.center = {lng: res.gps.lng, lat: res.gps.lat};
+    });
+  },
   data () {
     return {
+          item: null,
           items: [
           {
             text: 'Home',
@@ -164,19 +142,14 @@ export default {
             text: 'Nouveau essui-glace révolutionnaire',
             disabled: true
           }
-         
         ],
-
-         infoContent: '',
+      infoContent: '',
       infoWindowPos: {
         lat: 0,
         lng: 0
       },
-      markers: [
-        {
-          position: {lat: 45.764043, lng: 4.835659},
-        },
-      ],
+      markers: [],
+      center: null,
       infoWinOpen: false,
       infoOptions: {
         pixelOffset: {
@@ -185,7 +158,7 @@ export default {
           minWidth: 400
         }
       },
-       icon: require('@/assets/gmap_marker.png'),
+       icon: require('@/assets/marker.png'),
        options: {
           disableDefaultUI: false,
           styles: [

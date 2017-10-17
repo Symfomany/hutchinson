@@ -1,9 +1,10 @@
 <template>
   <div class="Main">
+
     <gmap-map
      :options="options"
-      :center="{lat:45.764043, lng:4.835659}"
-      :zoom="5"
+      :center="{lat:47.081012, lng:2.398782}"
+      :zoom="6"
       map-type-id="terrain"
       id="map"
       ref="map"
@@ -14,14 +15,13 @@
      :key="index"
      :position="m.gps"
      :clickable="true"
-     :draggable="false"
      @click="toggleInfoWindow(m,index)"
     >
-       <gmap-info-window :options="infoOptions" 
-       :position="infoWindowPos" :opened="infoWinOpen" :content="infoContent"
-        @closeclick="infoWinOpen=false"
-        ></gmap-info-window>
     </gmap-marker>
+    
+     <gmap-info-window :options="infoOptions" class="infoBulle"
+       :position="infoWindowPos" :opened="infoWinOpen"
+       :content="infoContent" @closeclick="infoWinOpen=false"></gmap-info-window>
   </gmap-map>
   </div>
 </template>
@@ -37,16 +37,19 @@ export default {
       infoContent: '',
       infoWindowPos: {
         lat: 0,
-        lng: 0
+        lng: 0,
       },
       markers: Store.state,
+      currentMidx: null,
       infoWinOpen: false,
       infoOptions: {
         pixelOffset: {
           width: 0,
-          height: 0,
+          height: -40,
+          minWidth: 400
         }
       },
+        center: { lat: 45.76440947770659, lng: 4.843597412109375 },
        icon: require('@/assets/marker.png'),
        options: {
           disableDefaultUI: false,
@@ -147,11 +150,9 @@ export default {
         toggleInfoWindow: function (marker, idx) {
             this.infoWindowPos = marker.gps;
             this.infoContent = `<div class="contentInfo">
-                <h3>Lyon</h3>
-                <p>2 projets</p>
-                </div>`;
-
-            console.log(this.infoContent);
+                                    <h3>${marker.name}</h3>
+                                    <p>${marker.description}</p>
+                                </div>`;
 
             if (this.currentMidx == idx) {
                 this.infoWinOpen = !this.infoWinOpen;
@@ -162,6 +163,7 @@ export default {
                 this.currentMidx = idx;
                 this.$refs.map.panBy(10, 10)
             }
+            
     }
     }
 }
