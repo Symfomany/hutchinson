@@ -1,19 +1,14 @@
 <template>
-  <v-layout>
+  <v-layout id="detail">
     <v-flex xs12>
-      <v-card>
-        <v-toolbar color="indigo" dark>
-            <v-breadcrumbs class="hidden-xs-only" divider="/">
-                <v-breadcrumbs-item 
-                    v-for="(item,index) in items" :key="index"
-                    :disabled="item.disabled"
-                >{{ item.text }}
-                </v-breadcrumbs-item>
-            </v-breadcrumbs>
+    <v-progress-circular v-if="!item.nom" indeterminate v-bind:size="50" color="primary"></v-progress-circular>
+
+      <v-card v-else>
+        <v-toolbar style="background-color: rgb(25, 118, 210) !important;">
             <v-toolbar-title class="white--text">{{ item.nom }}</v-toolbar-title>
         
         </v-toolbar>
-        <v-card-media :src="'../static/img/' + item.photo" height="200px">
+        <v-card-media :src="'../static/img/' + item.photo" height="width:100;200px">
          </v-card-media>
         <v-card-title>
           <div>
@@ -26,8 +21,7 @@
           <div>
             <span class="grey--text">Description</span><br>
             <span>
-                <p>
-                    {{ item.description }}
+                <p v-html="item.description">
                 </p>
             </span><br>
           </div>
@@ -132,7 +126,7 @@ export default {
   },
   data () {
     return {
-          item: null,
+          item: {},
           items: [
           {
             text: 'Home',
@@ -256,8 +250,8 @@ export default {
     .flex.xs12{
       cursor: pointer;   
     }
-    .application--light a{
-        color: white;
+    .application--light .breadcrumbs li .breadcrumbs__item--disabled, .application--light .breadcrumbs li .breadcrumbs__item a{
+        color: white !important;
     }
     .indigo{
         background-color: #E00025 !important;

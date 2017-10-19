@@ -39,6 +39,16 @@ export default {
 }
 </script>
 
+
+<style>
+@font-face {
+  font-family: sanspro;
+  src: url(sanspro.otf);
+}
+*{
+  font-family: sanspro;
+}
+</style>
 <style lang="scss" scoped>
 .hide{
   opacity: 0;

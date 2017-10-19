@@ -2,27 +2,18 @@
   <div class="Navbar">
    <v-toolbar fixed dark color="grey lighten-4" >
         <v-layout> 
-          <v-flex xs12 md3>
+          <v-flex xs12 md4>
             <router-link to="/"><v-toolbar-title><img alt="Hutchinson Logo" id="imgLogo" src="../../assets/logoHutchinson.png" /></v-toolbar-title></router-link>
           </v-flex>
-          <v-flex  class="hidden-xs-only" xs8 id="searchBlock">
-            <v-text-field
-              append-icon="search"
-              label="Recherchez un projet"
-              :rules="[(v) => v.length <= 25 || 'Max 25 characters']"
-              v-model="search.word"
-            ></v-text-field>
-          </v-flex>
         </v-layout> 
+        <v-spacer class="hidden-xs-only"></v-spacer>
         
-          <v-spacer class="hidden-xs-only"></v-spacer>
-          
-            <v-btn class="hidden-xs-only" round @click="go('map')" color="rounded primary" >
-              <v-icon >map</v-icon>Carte
-            </v-btn>
-            <v-btn class="hidden-xs-only" round @click="go('list')" color="rounded primary" >
-              <v-icon >list</v-icon>Liste
-            </v-btn>
+          <v-btn class="hidden-xs-only"  @click="go('map')" color="rounded primary" >
+            <v-icon >map</v-icon>Carte
+          </v-btn>
+          <v-btn class="hidden-xs-only"  @click="go('list')" color="rounded primary" >
+            <v-icon >list</v-icon>Liste
+          </v-btn>
     </v-toolbar>
 
     <div id="btns">
@@ -52,11 +43,9 @@ export default {
   methods: {
     go(action = 'list'){
       this.$router.push({ name: action}) 
-    }
-  },
-  watch: {
-      "search.word": function () {
-        if (this.search.word.length >= 3) {
+    },
+    searching(){
+       if (this.search.word.length >= 3) {
           Store.filterDatas();
           EventBus.$emit('update');
         } else {
@@ -64,6 +53,18 @@ export default {
           Store.state.limit = 300;
           EventBus.$emit('update');
         }
+    }
+  },
+  watch: {
+      "search.word": function () {
+        // if (this.search.word.length >= 3) {
+        //   Store.filterDatas();
+        //   EventBus.$emit('update');
+        // } else {
+        //   Store.loadDatas();
+        //   Store.state.limit = 300;
+        //   EventBus.$emit('update');
+        // }
       }
   }
 }
@@ -85,20 +86,14 @@ export default {
     overflow: auto;
 }
 
-.application--light .btn{
-  background-color: #142559 !important;
-}
-
 #searchBlock{
   margin-top: 5px;
 }
-.cyan{
-  background-color: #142559 !important;
-}
+
 img#imgLogo{
-  width: 60%;
-  height: 29px;
-  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
 }
 @media only screen and (max-width : 420px) {
   img#imgLogo{
